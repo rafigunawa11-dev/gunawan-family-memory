@@ -104,27 +104,27 @@ export default function Carousel3D({ items, onSelect }: Carousel3DProps) {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center gap-4 justify-center mt-8 w-fit mx-auto px-3 py-1.5 rounded-full bg-[--color-surface]/50 backdrop-blur-sm border border-[--color-border]">
-        <button onClick={toPrev} className="p-2 cursor-pointer text-[--color-text-muted] hover:text-[--color-text] transition-colors">
-          <ChevronLeft size={18} />
+      <div className="flex items-center gap-2 sm:gap-4 justify-center mt-6 sm:mt-8 w-fit max-w-[90vw] mx-auto px-2 sm:px-3 py-1.5 rounded-full bg-[--color-surface]/50 backdrop-blur-sm border border-[--color-border]">
+        <button onClick={toPrev} className="p-1.5 sm:p-2 cursor-pointer text-[--color-text-muted] hover:text-[--color-text] transition-colors shrink-0">
+          <ChevronLeft size={16} />
         </button>
 
-        <div className="w-[180px] flex justify-center items-center gap-2">
+        <div className="max-w-[120px] sm:max-w-[180px] flex justify-center items-center gap-1 sm:gap-2 overflow-hidden flex-wrap">
           {items.map((_, i) => (
             <div
               key={i}
               onClick={() => toSlide(i)}
-              className={`rounded-full cursor-pointer h-2 transition-[width,background-color] duration-300 ${
+              className={`rounded-full cursor-pointer h-1.5 sm:h-2 transition-[width,background-color] duration-300 ${
                 activeIndex === i
-                  ? "w-7 bg-[--color-text]"
-                  : "w-2 bg-[--color-text-muted]/30"
+                  ? "w-5 sm:w-7 bg-[--color-text]"
+                  : "w-1.5 sm:w-2 bg-[--color-text-muted]/30"
               }`}
             />
           ))}
         </div>
 
-        <button onClick={toNext} className="p-2 cursor-pointer text-[--color-text-muted] hover:text-[--color-text] transition-colors">
-          <ChevronRight size={18} />
+        <button onClick={toNext} className="p-1.5 sm:p-2 cursor-pointer text-[--color-text-muted] hover:text-[--color-text] transition-colors shrink-0">
+          <ChevronRight size={16} />
         </button>
       </div>
     </div>

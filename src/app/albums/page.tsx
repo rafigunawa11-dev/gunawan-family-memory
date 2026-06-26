@@ -57,20 +57,20 @@ export default function AlbumsPage() {
   }
 
   return (
-    <div className="min-h-screen pt-20 pb-16 px-[2vw] sm:px-[3vw]">
-      <div className="flex items-end justify-between mb-16 animate-fade-in-up">
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="flex items-end justify-between gap-4 mb-10 sm:mb-16 animate-fade-in-up">
         <div>
           <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mb-4 font-bold">
             Organized
           </p>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.02em] leading-[0.85]">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-medium tracking-[-0.02em] leading-[0.85]">
             Albums
           </h1>
         </div>
 
         <button
           onClick={() => setShowCreate(!showCreate)}
-          className="px-6 py-2.5 border border-[--color-text-light] text-[--color-text-light] text-[9px] tracking-[0.4em] uppercase font-bold hover:bg-[--color-text-light] hover:text-[--color-bg] transition-all duration-500 cursor-pointer active:scale-[0.98]"
+          className="px-4 sm:px-6 py-2 sm:py-2.5 border border-[--color-text-light] text-[--color-text-light] text-[9px] tracking-[0.3em] sm:tracking-[0.4em] uppercase font-bold hover:bg-[--color-text-light] hover:text-[--color-bg] transition-all duration-500 cursor-pointer active:scale-[0.98] shrink-0"
         >
           + New Album
         </button>
@@ -106,7 +106,7 @@ export default function AlbumsPage() {
         </div>
       ) : albums.length === 0 ? (
         <div className="flex items-center justify-center py-32 animate-fade-in-up">
-          <div className="relative p-16 text-center">
+          <div className="relative p-8 sm:p-16 text-center">
             <CornerOrnament />
             <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mb-4 font-bold">
               Empty

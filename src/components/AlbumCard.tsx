@@ -11,7 +11,7 @@ export default function AlbumCard({ name, path, count }: AlbumCardProps) {
   return (
     <Link
       href={`/albums/${encodeURIComponent(name)}`}
-      className="group relative block border border-[--color-border] p-8 hover:border-[--color-text-muted] transition-all duration-500 cursor-pointer"
+      className="group relative block border border-[--color-border] p-5 sm:p-8 hover:border-[--color-text-muted] transition-all duration-500 cursor-pointer"
     >
       <CornerOrnament />
       <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mb-4 font-bold">

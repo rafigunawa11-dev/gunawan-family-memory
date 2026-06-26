@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference pointer-events-none text-[--color-text-light] animate-fade-in">
-      <div className="flex items-start justify-between px-[2vw] pt-[1.2vw]">
+      <div className="flex items-start justify-between px-4 sm:px-6 pt-3 sm:pt-4">
         {/* Left: Brand */}
         <Link href="/gallery" className="pointer-events-auto cursor-pointer">
           <TextScramble text="GFM" className="text-[10px] sm:text-[11px] font-extrabold" />

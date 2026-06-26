@@ -58,7 +58,7 @@ export default function PhotoGrid({ items, onDeleted }: PhotoGridProps) {
   if (items.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-32 animate-fade-in-up">
-        <div className="relative p-16 text-center">
+        <div className="relative p-8 sm:p-16 text-center">
           <CornerOrnament />
           <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mb-4 font-bold">
             Empty
@@ -93,7 +93,7 @@ export default function PhotoGrid({ items, onDeleted }: PhotoGridProps) {
                   preload="metadata"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 border border-white/40 flex items-center justify-center group-hover:border-white/80 group-hover:scale-110 transition-all duration-300">
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 border border-white/40 flex items-center justify-center group-hover:border-white/80 group-hover:scale-110 transition-all duration-300">
                     <svg
                       className="w-4 h-4 text-white ml-0.5"
                       fill="currentColor"

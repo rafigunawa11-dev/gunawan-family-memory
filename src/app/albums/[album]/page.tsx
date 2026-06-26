@@ -47,7 +47,7 @@ export default function AlbumDetailPage({
   }, [albumName]);
 
   return (
-    <div className="min-h-screen pt-20 pb-16 px-[2vw] sm:px-[3vw]">
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="mb-14">
         <Link
           href="/albums"
@@ -58,7 +58,7 @@ export default function AlbumDetailPage({
           </svg>
           Back to Albums
         </Link>
-        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium tracking-[-0.02em] capitalize leading-[0.85]">
+        <h1 className="font-display text-2xl sm:text-3xl lg:text-5xl font-medium tracking-[-0.02em] capitalize leading-[0.85]">
           {albumName.replace(/-/g, " ")}
         </h1>
         <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mt-4 font-bold">

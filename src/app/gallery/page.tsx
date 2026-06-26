@@ -43,14 +43,14 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen pt-20 pb-16">
       {/* Header */}
-      <div className="px-[2vw] sm:px-[3vw] mb-10 animate-fade-in-up">
+      <div className="px-4 sm:px-6 lg:px-8 mb-10 animate-fade-in-up">
         <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mb-4 font-bold">
           Collection — {media.length} memories
         </p>
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.02em] leading-[0.85]">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-medium tracking-[-0.02em] leading-[0.85]">
           Semua
         </h1>
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium italic tracking-[-0.02em] leading-[0.85] mt-1">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-medium italic tracking-[-0.02em] leading-[0.85] mt-1">
           Kenangan
         </h1>
       </div>
@@ -66,7 +66,7 @@ export default function GalleryPage() {
       )}
 
       {/* Masonry grid */}
-      <div className="px-[2vw] sm:px-[3vw]">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className="relative py-8 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
           <CornerOrnament />
           <div className="px-4 sm:px-8">

@@ -28,7 +28,7 @@ export default function UploadPage() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-20 pb-16 px-[2vw] sm:px-[3vw]">
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="mb-14 animate-fade-in-up">
           <p className="text-[9px] tracking-[0.4em] uppercase text-[--color-text-muted] mb-4 font-bold">

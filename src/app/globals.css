@@ -44,9 +44,17 @@ body {
 .corner-ornament::after {
   content: '';
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .corner-ornament::before,
+  .corner-ornament::after {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .corner-ornament::before {
@@ -71,6 +79,10 @@ body {
 
 @media (min-width: 640px) {
   .masonry-grid { columns: 2; }
+}
+
+@media (min-width: 768px) {
+  .masonry-grid { columns: 2; column-gap: 1.25rem; }
 }
 
 @media (min-width: 1024px) {

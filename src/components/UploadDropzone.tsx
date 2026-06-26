@@ -143,7 +143,7 @@ export default function UploadDropzone({
         onDragLeave={() => setDragging(false)}
         onDrop={handleDrop}
         onClick={() => inputRef.current?.click()}
-        className={`border border-dashed p-16 text-center cursor-pointer transition-all duration-300 ${
+        className={`border border-dashed p-8 sm:p-16 text-center cursor-pointer transition-all duration-300 ${
           dragging
             ? "border-[--color-accent] bg-[--color-accent]/5"
             : "border-[--color-border] hover:border-[--color-text-muted]"
@@ -180,7 +180,7 @@ export default function UploadDropzone({
 
       {files.length > 0 && (
         <div className="space-y-6">
-          <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {files.map((f, i) => (
               <div key={i} className="relative group overflow-hidden bg-[--color-surface] aspect-square">
                 {f.file.type.startsWith("video/") ? (

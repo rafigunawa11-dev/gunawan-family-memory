@@ -38,18 +38,18 @@ export default function LoginPage() {
   return (
     <div className="flex-1 flex items-center justify-center px-4 relative overflow-hidden min-h-screen">
       <div className="w-full max-w-md relative z-10">
-        <div className="relative p-12 sm:p-16">
+        <div className="relative p-6 sm:p-12 md:p-16">
           <CornerOrnament />
 
           {/* Title */}
-          <div className="text-center mb-14 animate-fade-in-up">
+          <div className="text-center mb-8 sm:mb-14 animate-fade-in-up">
             <div className="flex justify-center mb-8">
               <TextScramble text="Private Family Archive" className="text-[10px] font-semibold" />
             </div>
-            <h1 className="font-display text-5xl sm:text-6xl font-medium tracking-[-0.02em] text-[--color-text] leading-[0.9]">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.02em] text-[--color-text] leading-[0.9]">
               Gunawan
             </h1>
-            <h1 className="font-display text-5xl sm:text-6xl font-medium italic tracking-[-0.02em] text-[--color-text] leading-[0.9] mt-1">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-medium italic tracking-[-0.02em] text-[--color-text] leading-[0.9] mt-1">
               Fam Memory
             </h1>
             <div className="w-16 h-px bg-[--color-text-muted]/30 mx-auto mt-10 animate-line-expand" />
@@ -97,7 +97,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <p className="text-center text-[--color-text-muted] text-[9px] tracking-[0.3em] uppercase mt-14 font-semibold">
+          <p className="text-center text-[--color-text-muted] text-[9px] tracking-[0.3em] uppercase mt-8 sm:mt-14 font-semibold">
             Keluarga Gunawan Only
           </p>
         </div>

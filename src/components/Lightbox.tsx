@@ -54,7 +54,7 @@ export default function Lightbox({
       {/* Close */}
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 z-10 text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
       >
         Close
       </button>
@@ -63,7 +63,7 @@ export default function Lightbox({
       {currentIndex > 0 && (
         <button
           onClick={() => onNavigate(currentIndex - 1)}
-          className="absolute left-6 z-10 text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
+          className="absolute left-4 sm:left-6 z-10 text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
         >
           Prev
         </button>
@@ -73,7 +73,7 @@ export default function Lightbox({
       {currentIndex < items.length - 1 && (
         <button
           onClick={() => onNavigate(currentIndex + 1)}
-          className="absolute right-6 z-10 text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
+          className="absolute right-4 sm:right-6 z-10 text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
         >
           Next
         </button>
@@ -101,7 +101,7 @@ export default function Lightbox({
       {onDelete && (
         <button
           onClick={() => setShowConfirm(true)}
-          className="absolute top-6 left-6 z-10 text-[11px] tracking-[0.2em] uppercase text-red-400/60 hover:text-red-400 transition-colors duration-300"
+          className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 text-[11px] tracking-[0.2em] uppercase text-red-400/60 hover:text-red-400 transition-colors duration-300"
         >
           Hapus
         </button>
@@ -139,7 +139,7 @@ export default function Lightbox({
       )}
 
       {/* Counter */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] text-[--color-text-muted]">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] text-[--color-text-muted]">
         {String(currentIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
       </div>
     </div>
