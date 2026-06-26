@@ -98,6 +98,13 @@ export async function getAllMedia(): Promise<MediaItem[]> {
   }
 }
 
+export async function deleteMedia(publicId: string, resourceType: "image" | "video") {
+  const result = await cloudinary.uploader.destroy(publicId, {
+    resource_type: resourceType,
+  });
+  return result;
+}
+
 export function getUploadSignature(folder: string) {
   const timestamp = Math.round(new Date().getTime() / 1000);
   const params = {

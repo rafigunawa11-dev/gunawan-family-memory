@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 
 interface LightboxProps {
   items: Array<{
@@ -13,6 +13,7 @@ interface LightboxProps {
   currentIndex: number;
   onClose: () => void;
   onNavigate: (index: number) => void;
+  onDelete?: (publicId: string, resourceType: string) => void;
 }
 
 export default function Lightbox({
@@ -20,8 +21,11 @@ export default function Lightbox({
   currentIndex,
   onClose,
   onNavigate,
+  onDelete,
 }: LightboxProps) {
   const item = items[currentIndex];
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -92,6 +96,47 @@ export default function Lightbox({
           />
         )}
       </div>
+
+      {/* Delete */}
+      {onDelete && (
+        <button
+          onClick={() => setShowConfirm(true)}
+          className="absolute top-6 left-6 z-10 text-[11px] tracking-[0.2em] uppercase text-red-400/60 hover:text-red-400 transition-colors duration-300"
+        >
+          Hapus
+        </button>
+      )}
+
+      {/* Delete confirmation */}
+      {showConfirm && (
+        <div className="absolute inset-0 z-50 bg-black/80 flex items-center justify-center animate-fade-in">
+          <div className="text-center p-8">
+            <p className="font-display text-lg text-[--color-text] mb-2">Hapus kenangan ini?</p>
+            <p className="text-[11px] tracking-[0.2em] text-[--color-text-muted] mb-8">Tidak bisa dikembalikan</p>
+            <div className="flex gap-6 justify-center">
+              <button
+                onClick={() => setShowConfirm(false)}
+                disabled={deleting}
+                className="text-[11px] tracking-[0.2em] uppercase text-[--color-text-muted] hover:text-[--color-text] transition-colors duration-300"
+              >
+                Batal
+              </button>
+              <button
+                onClick={async () => {
+                  setDeleting(true);
+                  await onDelete!(item.public_id, item.resource_type);
+                  setDeleting(false);
+                  setShowConfirm(false);
+                }}
+                disabled={deleting}
+                className="text-[11px] tracking-[0.2em] uppercase text-red-400 hover:text-red-300 transition-colors duration-300"
+              >
+                {deleting ? "Menghapus..." : "Ya, Hapus"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Counter */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] text-[--color-text-muted]">

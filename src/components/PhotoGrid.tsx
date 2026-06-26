@@ -18,11 +18,24 @@ interface MediaItem {
 
 interface PhotoGridProps {
   items: MediaItem[];
+  onDeleted?: () => void;
 }
 
-export default function PhotoGrid({ items }: PhotoGridProps) {
+export default function PhotoGrid({ items, onDeleted }: PhotoGridProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  const handleDelete = async (publicId: string, resourceType: string) => {
+    const res = await fetch("/api/media", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ publicId, resourceType }),
+    });
+    if (res.ok) {
+      setLightboxIndex(null);
+      onDeleted?.();
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -121,6 +134,7 @@ export default function PhotoGrid({ items }: PhotoGridProps) {
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
+          onDelete={handleDelete}
         />
       )}
     </>

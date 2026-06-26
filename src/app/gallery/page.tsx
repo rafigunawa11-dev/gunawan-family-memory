@@ -81,7 +81,7 @@ export default function GalleryPage() {
                 ))}
               </div>
             ) : (
-              <PhotoGrid items={media} />
+              <PhotoGrid items={media} onDeleted={fetchMedia} />
             )}
           </div>
         </div>
@@ -94,6 +94,17 @@ export default function GalleryPage() {
           currentIndex={carouselLightbox}
           onClose={() => setCarouselLightbox(null)}
           onNavigate={setCarouselLightbox}
+          onDelete={async (publicId, resourceType) => {
+            const res = await fetch("/api/media", {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ publicId, resourceType }),
+            });
+            if (res.ok) {
+              setCarouselLightbox(null);
+              fetchMedia();
+            }
+          }}
         />
       )}
     </div>

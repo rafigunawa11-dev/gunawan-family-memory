@@ -27,20 +27,22 @@ export default function AlbumDetailPage({
   const [media, setMedia] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchMedia() {
-      try {
-        const res = await fetch(
-          `/api/media?folder=gunawan-farm/${albumName}`
-        );
-        const data = await res.json();
-        setMedia(data.media || []);
-      } catch {
-        setMedia([]);
-      } finally {
-        setLoading(false);
-      }
+  async function fetchMedia() {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `/api/media?folder=gunawan-farm/${albumName}`
+      );
+      const data = await res.json();
+      setMedia(data.media || []);
+    } catch {
+      setMedia([]);
+    } finally {
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchMedia();
   }, [albumName]);
 
@@ -74,7 +76,7 @@ export default function AlbumDetailPage({
               ))}
             </div>
           ) : (
-            <PhotoGrid items={media} />
+            <PhotoGrid items={media} onDeleted={fetchMedia} />
           )}
         </div>
       </div>
